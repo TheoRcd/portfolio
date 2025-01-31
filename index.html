@@ -3,96 +3,348 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
+    <title>Théo Richard – Product Designer</title>
+    <meta name="description" content="I’m a Product Designer. I solve complex problems by organising information logically and making data-informed decisions to deliver simple solutions.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.theorichard.com/">
+    <link rel="icon" href="assets/favicons/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="assets/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/favicons/favicon-32x32.png" sizes="32x32">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="logo">Your Logo</div>
-            <button class="resume-download">Download Resume</button>
-        </header>
-
-        <section class="intro">
-            <h1>Introduction Title</h1>
-            <p>Brief introduction about yourself</p>
-        </section>
-
-        <nav>
-            <ul>
-                <li class="active">Work</li>
-                <li>Side Projects</li>
-                <li>Others</li>
-                <li>About Me</li>
-            </ul>
-        </nav>
-
-        <main>
-            <section id="work" class="active">
-                <div class="project-tile">
-                    <div class="project-image"></div>
-                    <div class="project-description">
-                        <h2>Project Title</h2>
-                        <p>Project description</p>
-                        <button>View Project</button>
-                    </div>
-                </div>
-                <!-- Repeat for 3 more work projects -->
-            </section>
-
-            <section id="side-projects">
-                <!-- Similar structure to work section -->
-            </section>
-
-            <section id="others">
-                <!-- Similar structure to work section -->
-            </section>
-
-            <section id="about-me">
-                <div class="illustration"></div>
-                <p>Long text about yourself</p>
-                
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <i class="icon"></i>
-                        <h3>Skill Title</h3>
-                        <p>Skill description</p>
-                    </div>
-                    <!-- More skill items -->
-                </div>
-
-                <div class="additional-illustration"></div>
-
-                <div class="experience-section">
-                    <div class="experience-column">
-                        <h3>Column Title</h3>
-                        <ul>
-                            <li><i class="icon"></i>Experience Item</li>
-                            <!-- More items -->
-                        </ul>
-                    </div>
-                    <!-- Another column -->
-                </div>
-
-                <button>Download CV</button>
-            </section>
-        </main>
-
-        <footer>
-            <div class="footer-content">
-                <h2>Contact Title</h2>
-                <p>First contact line</p>
-                <p>Second contact line</p>
-                
-                <div class="social-icons">
-                    <!-- Social network icons -->
-                </div>
-
-                <button class="scroll-top">Back to Top</button>
-            </div>
-        </footer>
+    <div class="custom-cursor"></div>
+    <div id="password-overlay">
+      <div id="password-modal">
+        <div id="modal-content">
+          <div id="modal-header">
+            <div id="modal-icon"><img src="assets/icons/password.svg" alt=""></div>
+            <h1>Enter password</h1>
+          </div>
+          <div id="modal-password-container">
+            <div id="modal-password">
+            <input type="text" id="password-input-first" class="password-input" maxlength="1">
+            <input type="text" class="password-input" maxlength="1">
+            <input type="text" class="password-input" maxlength="1">
+            <input type="text" class="password-input" maxlength="1">
+            <input type="text" class="password-input" maxlength="1">
+            <input type="text" class="password-input" maxlength="1">
+          </div>
+          <div class="error-message" id="error-message">
+            <img src="assets/icons/password-wrong.svg" alt="">
+            <p>Incorrect password</p>
+          </div>
+          </div>
+        </div>
+        <button class="button-secondary cancel-btn" onclick="closeModal(event)">Cancel</button>
+      </div>
     </div>
-
+    <header>
+      <div id="header-container">
+        <a href="#" id="logo">
+        <img src="assets/icons/logo.png" alt="">
+      </a>
+      <a href="assets/resume/theo-richard-resume-2025.pdf" download="theo-richard-resume-2025.pdf" target="_blank" id="download-resume">
+        <button class="button">Resume<img src="assets/icons/arrow-down-light.svg" alt=""></button>
+      </a>
+      <div id="header-intro">
+        <h1>Hi there! I’m Théo</h1>
+        <p>I’m a senior Product Designer at <a href="https://onfido.com/" target="_blank">Onfido</a>. I solve complex problems by organising information logically and making data-informed decisions to deliver simple solutions.</p>
+      </div>
+      <nav>
+        <ul>
+          <div id="nav-background"></div>
+          <li data-target="work" class="nav-item active">Work</li>
+          <li data-target="side-projects" class="nav-item">Side projects</li>
+          <li data-target="others" class="nav-item">Others</li>
+          <li data-target="about-me" class="nav-item">About me</li>
+        </ul>
+      </nav>
+      </div>
+    </header>
+    <main class="content work active">
+      <div class="content-background-blur"></div>
+      <div id="section1" class="section active">
+        <div class="card">
+          <div class="card-visual">
+            <div class="card-img">
+              <img src="assets/previews/preview-motion.png" alt="">
+            </div>
+          </div>
+          <div class="card-description">
+            <div class="card-content">
+              <div class="card-title">
+              <img src="assets/icons/icon-motion.svg" alt="">
+              <h1>Motion</h1>
+            </div>
+            <p>I led the design of Onfido’s latest biometrics product from conception to production. Motion is now used by 100,000 people monthly.</p>
+            </div>
+            <button class="button">View project<img src="assets/icons/arrow-right-light.svg" alt=""></button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-visual">
+            <div class="card-img">
+              <img src="assets/previews/preview-nfc.png" alt="">
+            </div>
+          </div>
+          <div class="card-description">
+            <div class="card-content">
+              <div class="card-title">
+              <img src="assets/icons/icon-nfc.svg" alt="">
+              <h1>NFC Scan</h1>
+            </div>
+            <p>I led the redesign of our NFC scanning product over a short period of time. Crafting details have been key in allowing twice as many users to scan the biometric chip from their IDs.</p>
+            </div>
+            <button class="button">View project<img src="assets/icons/arrow-right-light.svg" alt=""></button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-visual">
+            <div class="card-img">
+              <img src="assets/previews/preview-doc.png" alt="">
+            </div>
+          </div>
+          <div class="card-description">
+            <div class="card-content">
+              <div class="card-title">
+              <img src="assets/icons/icon-doc.svg" alt="">
+              <h1>ID Scan</h1>
+            </div>
+            <p>I led the investigation and resolution of drop-off issues in our document capture product through major design improvements.</p>
+            </div>
+            <button class="button" onclick="openModal()">Enter password<img src="assets/icons/lock.svg" alt=""></button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-visual">
+            <div class="card-img">
+              <img src="assets/previews/preview-studio.png" alt="">
+            </div>
+          </div>
+          <div class="card-description">
+            <div class="card-content">
+              <div class="card-title">
+              <img src="assets/icons/icon-studio.svg" alt="">
+              <h1>Studio</h1>
+            </div>
+            <p>I worked on the product vision and V1 of a tool that lets customers configure their identity verification journey as they wish, with limited code, and great insights.</p>
+            </div>
+            <button class="button" onclick="openModal()">Enter password<img src="assets/icons/lock.svg" alt=""></button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <main class="content side-projects inactive-right">
+      <div class="content-background-blur"></div>
+      <div id="section2" class="section active">
+        <div class="card">
+          <div class="card-visual">
+            <div class="card-img">
+              <img src="" alt="">
+            </div>
+          </div>
+          <div class="card-description">
+            <div class="card-content">
+              <div class="card-title">
+              <h1>Design Patent</h1>
+            </div>
+            <p>As part of my work in Onfido’s latest biometrics product, I was able to get my designs patented and to get credited as an inventor. This was the first Onfido Design patent.</p>
+            </div>
+            <button class="button">View patent<img src="assets/icons/arrow-external-light.svg" alt=""></button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-visual">
+            <div class="card-img">
+              <img src="" alt="">
+            </div>
+          </div>
+          <div class="card-description">
+            <div class="card-content">
+              <div class="card-title">
+              <h1>Immersion & UX</h1>
+            </div>
+            <p>I wrote a thesis about Immersion and User Experience during my Master's degree. The purpose is to establish the influence of immersive processes on user experience in a global way.</p>
+            </div>
+            <div class="button-wrapper">
+              <button class="button">Read<img src="assets/icons/arrow-external-light.svg" alt=""></button>
+              <button class="button-secondary">Download (PDF)<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.99999 11.5858L12.2929 8.29289C12.6834 7.90237 13.3166 7.90237 13.7071 8.29289C14.0976 8.68342 14.0976 9.31658 13.7071 9.70711L8.70711 14.7071C8.31658 15.0976 7.68342 15.0976 7.29289 14.7071L2.29289 9.70711C1.90237 9.31658 1.90237 8.68342 2.29289 8.29289C2.68342 7.90237 3.31658 7.90237 3.70711 8.29289L6.99999 11.5858L7 2C7 1.44771 7.44772 1 8 1C8.55229 1 9 1.44772 9 2L8.99999 11.5858Z" fill="currentColor"/>
+                </svg></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <main class="content others inactive-right">
+      <div class="content-background-blur"></div>
+      <div id="section3" class="section active">
+        <div class="card">
+          <div class="card-visual">
+            <div class="card-img">
+              <img src="" alt="">
+            </div>
+          </div>
+          <div class="card-description">
+            <div class="card-content">
+              <div class="card-title">
+              <h1>Design Patent</h1>
+            </div>
+            <p>I led the design of Onfido’s latest biometrics product from conception to production. Motion is now used by 100,000 people monthly.</p>
+            </div>
+            <button class="button">View project<img src="assets/icons/arrow-right-light.svg" alt=""></button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-visual">
+            <div class="card-img">
+              <img src="" alt="">
+            </div>
+          </div>
+          <div class="card-description">
+            <div class="card-content">
+              <div class="card-title">
+              <h1>Immersion & UX</h1>
+            </div>
+            <p>I led the redesign of our NFC scanning product over a short period of time. Crafting details have been key in allowing twice as many users to scan the biometric chip from their IDs.</p>
+            </div>
+            <button class="button">View project<img src="assets/icons/arrow-right-light.svg" alt=""></button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <main class="content about-me inactive-right">
+      <div class="content-background-blur"></div>
+      <div id="section4" class="section active">
+        <div class="image me">
+          <div class="arch"></div>
+        </div>
+        <h1 class="highlight">Here are the skills I cherish to design relevant, functional, inclusive, and delightful solutions.</h1>
+        <div class="skills">
+          <div class="skills-item">
+            <div class="skills-img">
+              <img src="assets/icons/skill-logic.svg" alt="">
+            </div>
+            <div class="skills-text">
+              <h2>Logical thinking</h2>
+              <p>Most good designs are common sense, but it’s all about organising a lot of complex information to frame problems correctly for the right people to design simple solutions. I have experience turning ambiguity into clarity.</p>
+            </div>
+          </div>
+          <div class="skills-item">
+            <div class="skills-img">
+              <img src="assets/icons/skill-data.svg" alt="">
+            </div>
+            <div class="skills-text">
+              <h2>Looking for facts</h2>
+              <p>I make efficient data-informed decisions built on facts collaborating with key experts, testing my designs with users, making data analysis, and collecting relevant insights to iterate towards the best solution.</p>
+            </div>
+          </div>
+          <div class="skills-item">
+            <div class="skills-img">
+              <img src="assets/icons/skill-craft.svg" alt="">
+            </div>
+            <div class="skills-text">
+              <h2>Strong execution</h2>
+              <p>Previous points are nothing without being able to materialise what a solution should look like. This is where I rely on my eye for details through visual design, micro-interactions, animations, accessiblity, and prototyping.</p>
+            </div>
+          </div>
+          <div class="skills-item">
+            <div class="skills-img">
+              <img src="assets/icons/skill-vision.svg" alt="">
+            </div>
+            <div class="skills-text">
+              <h2>Design leadership</h2>
+              <p>I’m comfortable designing a vision, setting team objectives and having ways to measure their impact, so we can ship solutions efficiently. I also have experience recruiting and mentoring designers.</p>
+            </div>
+          </div>
+        </div>
+        <div class="image map"></div>
+        <div class="background">
+          <div class="background-item work">
+            <h2>Work</h2>
+            <div class="background-list">
+              <div class="background-list-item">
+                <img src="assets/icons/country-uk.svg" alt="">
+                <div class="background-list-text">
+                  <p class="background-list-title"><span>Onfido</span> Senior Product Designer</p>
+                  <p class="background-list-description">2019 -> Present</p>
+                </div>
+              </div>
+              <div class="background-list-item">
+                <img src="assets/icons/country-uk.svg" alt="">
+                <div class="background-list-text">
+                  <p class="background-list-title"><span>Landor & Fitch</span> AR/VR UX Designer</p>
+                  <p class="background-list-description">2018</p>
+                </div>
+              </div>
+              <div class="background-list-item">
+                <img src="assets/icons/country-us.svg" alt="">
+                <div class="background-list-text">
+                  <p class="background-list-title"><span>Brooklyn Digital Foundry</span> Interaction Designer</p>
+                  <p class="background-list-description">2016 -> 2017</p>
+                </div>
+              </div>
+              <div class="background-list-item">
+                <img src="assets/icons/country-fr.svg" alt="">
+                <div class="background-list-text">
+                  <p class="background-list-title"><span>Swimmingpool</span> Interaction Designer</p>
+                  <p class="background-list-description">2015</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="background-item education">
+            <h2>Education</h2>
+            <div class="background-list">
+              <div class="background-list-item">
+                <img src="assets/icons/country-fr.svg" alt="">
+                <div class="background-list-text">
+                  <p class="background-list-title"><span>L’École de Design Nantes Atlantique</span></p>
+                  <p class="background-list-description">Master’s Degree in Immersive UX Design</p>
+                  <p class="background-list-description">Bachelor’s Degree in Interaction Design</p>
+                </div>
+              </div>
+              <div class="background-list-item">
+                <img src="assets/icons/country-fr.svg" alt="">
+                <div class="background-list-text">
+                  <p class="background-list-title"><span>Arts et Métiers Paristech</span></p>
+                  <p class="background-list-description">Master’s Degree in Virtual & Innovation Engineering</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        <a href="assets/resume/theo-richard-resume-2025.pdf" target="_blank" id="download-resume-2">
+            <button class="button">Read full resume<img src="assets/icons/arrow-external-light.svg" alt=""></button>
+        </a>
+      </div>
+    </main>
+    <footer>
+      <div id="footer-container">
+        <h1>Let's connect</h1>
+        <div id="connect-description">
+          <p>Feel free to reach out for collaborations</p>
+          <a href="mailto:theoricharddesign@gmail.com">theoricharddesign@gmail.com</a>
+        </div>
+        <div id="social">
+          <ul>
+            <li><a href="https://www.linkedin.com/in/th%C3%A9o-richard-501036101/" target="_blank"><img src="assets/icons/social-linkedin.svg" alt="linkedin"></a></li>
+            <li><a href="https://medium.com/@theo-richard" target="_blank"><img src="assets/icons/social-medium.svg" alt="medium"></a></li>
+            <li><a href="https://x.com/theorichardd?s=21" target="_blank"><img src="assets/icons/social-twitter.svg" alt="twitter"></a></li>
+          </ul>
+        </div>
+        <a href="#" id="anchor-up">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.00001 4.41422L3.70711 7.70712C3.31658 8.09764 2.68342 8.09764 2.29289 7.70712C1.90237 7.31659 1.90237 6.68343 2.29289 6.2929L7.29289 1.2929C7.68342 0.902379 8.31658 0.90238 8.70711 1.2929L13.7071 6.2929C14.0976 6.68343 14.0976 7.31659 13.7071 7.70712C13.3166 8.09764 12.6834 8.09764 12.2929 7.70712L9.00001 4.41423L8.99999 14C8.99999 14.5523 8.55228 15 7.99999 15C7.44771 15 6.99999 14.5523 6.99999 14L7.00001 4.41422Z" fill="currentColor"/>
+            </svg>
+        </a>
+        <div id="copyright">
+          <img src="assets/icons/copyright-inside.svg" alt="">
+          <img src="assets/icons/copyright-outside.svg" alt="" id="copyright-rotate">
+        </div>
+      </div>
+    </footer>
     <script src="js/main.js"></script>
-</body>
+  </body>
 </html>
