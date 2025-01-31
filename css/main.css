@@ -1,5 +1,62 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  font-family: "Inter", sans-serif;
-  color: #333;
-  background-color: #F7F5F2;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 1008px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+nav ul li {
+  cursor: pointer;
+}
+
+main section {
+  display: none;
+}
+main section.active {
+  display: block;
+}
+main .project-tile {
+  display: flex;
+}
+@media (max-width: 768px) {
+  main .project-tile {
+    flex-direction: column;
+  }
+}
+
+#about-me .skills-grid {
+  display: grid;
+}
+@media (max-width: 768px) {
+  #about-me .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (min-width: 769px) {
+  #about-me .skills-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+footer {
+  background-color: #f4f4f4;
 }/*# sourceMappingURL=main.css.map */

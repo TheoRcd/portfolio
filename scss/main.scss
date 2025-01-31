@@ -1,7 +1,97 @@
 @import 'variables';
 
+// Variables
+$grid-columns: 12;
+$column-width: 64px;
+$gutter: 20px;
+$container-max-width: ($grid-columns * ($column-width + $gutter));
+
+// Mixins for responsive design
+@mixin mobile {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: 769px) {
+        @content;
+    }
+}
+
+// Reset and Base Styles
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-  font-family: $font-stack;
-  color: $primary-color;
-  background-color: $primary-background-color;
+    font-family: 'Inter', sans-serif;
+}
+
+.container {
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: 0 $gutter;
+}
+
+// Header Styles
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+// Navigation Styles
+nav {
+    ul {
+        display: flex;
+        list-style: none;
+        
+        li {
+            cursor: pointer;
+            ///&.active {
+                // Active state styling
+            ///}
+        }
+    }
+}
+
+// Main Content Sections
+main {
+    section {
+        display: none;
+        &.active {
+            display: block;
+        }
+    }
+
+    .project-tile {
+        display: flex;
+        
+        @include mobile {
+            flex-direction: column;
+        }
+    }
+}
+
+// About Me Section
+#about-me {
+    .skills-grid {
+        display: grid;
+        
+        @include mobile {
+            grid-template-columns: 1fr;
+        }
+        
+        @include desktop {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+
+// Footer
+footer {
+    background-color: #f4f4f4; // Different background
 }

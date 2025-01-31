@@ -1,5 +1,98 @@
-<link rel="stylesheet" href="css/main.css">
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
 <body>
-    <p>Hello</p>
+    <div class="container">
+        <header>
+            <div class="logo">Your Logo</div>
+            <button class="resume-download">Download Resume</button>
+        </header>
+
+        <section class="intro">
+            <h1>Introduction Title</h1>
+            <p>Brief introduction about yourself</p>
+        </section>
+
+        <nav>
+            <ul>
+                <li class="active">Work</li>
+                <li>Side Projects</li>
+                <li>Others</li>
+                <li>About Me</li>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="work" class="active">
+                <div class="project-tile">
+                    <div class="project-image"></div>
+                    <div class="project-description">
+                        <h2>Project Title</h2>
+                        <p>Project description</p>
+                        <button>View Project</button>
+                    </div>
+                </div>
+                <!-- Repeat for 3 more work projects -->
+            </section>
+
+            <section id="side-projects">
+                <!-- Similar structure to work section -->
+            </section>
+
+            <section id="others">
+                <!-- Similar structure to work section -->
+            </section>
+
+            <section id="about-me">
+                <div class="illustration"></div>
+                <p>Long text about yourself</p>
+                
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="icon"></i>
+                        <h3>Skill Title</h3>
+                        <p>Skill description</p>
+                    </div>
+                    <!-- More skill items -->
+                </div>
+
+                <div class="additional-illustration"></div>
+
+                <div class="experience-section">
+                    <div class="experience-column">
+                        <h3>Column Title</h3>
+                        <ul>
+                            <li><i class="icon"></i>Experience Item</li>
+                            <!-- More items -->
+                        </ul>
+                    </div>
+                    <!-- Another column -->
+                </div>
+
+                <button>Download CV</button>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <h2>Contact Title</h2>
+                <p>First contact line</p>
+                <p>Second contact line</p>
+                
+                <div class="social-icons">
+                    <!-- Social network icons -->
+                </div>
+
+                <button class="scroll-top">Back to Top</button>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
 </body>
+</html>
