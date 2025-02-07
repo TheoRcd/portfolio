@@ -1,4 +1,4 @@
-// Fade
+// FADE TRANSITION
 document.addEventListener("DOMContentLoaded", () => {
     // Add fade-in effect when page loads
     document.body.classList.add("show");
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// Scroll to Top
+// SCROLL TO TOP
 document.querySelector('#anchor-up').addEventListener('click', function (e) {
     e.preventDefault(); // Prevent default anchor behavior
     window.scrollTo({
@@ -27,7 +27,7 @@ document.querySelector('#anchor-up').addEventListener('click', function (e) {
     });
 });
 
-// Nav
+// NAV
 document.addEventListener("DOMContentLoaded", function () {
     const navItems = document.querySelectorAll(".nav-item");
     const activeBg = document.querySelector("#nav-background");
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// Cursor
+// CUSTOM CURSOR
 // Select the custom cursor element
 const cursor = document.querySelector('.custom-cursor');
 
@@ -68,7 +68,7 @@ document.addEventListener('mousemove', (event) => {
 });
 
 // Optional: Add hover effects for links or buttons
-document.querySelectorAll('a, button, input, .nav-item, .indicator').forEach((element) => {
+document.querySelectorAll('a, button, input, .nav-item, .indicator, video').forEach((element) => {
     element.addEventListener('mouseenter', () => {
         cursor.classList.add("active-cursor");
     });
@@ -77,6 +77,8 @@ document.querySelectorAll('a, button, input, .nav-item, .indicator').forEach((el
     });
 });
 
+
+// NAV SLIDER
 // Get all nav items and sections
 const navItems = document.querySelectorAll('.nav-item');
 const sections = document.querySelectorAll('.content');
@@ -148,7 +150,7 @@ navItems.forEach((item) => {
     });
 });
 
-// PASSWORD //
+// PASSWORD
 const modal = document.getElementById("password-overlay");
 const inputs = document.querySelectorAll(".password-input");
 const errorMessage = document.getElementById("error-message");
@@ -223,18 +225,19 @@ function checkPassword() {
     }
 }
 
-// Carousel
+// CAROUSEL
 
 const carousel = document.querySelector(".carousel");
 const images = document.querySelectorAll(".carousel-slide");
 const prevButton = document.getElementById("prev");
 const nextButton = document.getElementById("next");
 const indicatorsContainer = document.querySelector(".indicators");
+const carouselWidth = document.querySelector(".carousel-container").offsetWidth;
 
 let currentIndex = 0;
 
 function updateCarousel() {
-    const offset = currentIndex * (100 + (24 / window.innerWidth * 100)); // Adjust for gap
+    const offset = currentIndex * (100 + (32 / carouselWidth * 100)); // Adjust for gap
     carousel.style.transform = `translateX(-${offset}%)`;
     updateIndicators();
 }
@@ -269,3 +272,52 @@ nextButton.addEventListener("click", () => {
 });
 
 createIndicators();
+
+// GRADIENT SCROLL (TEXT)
+document.addEventListener("scroll", () => {
+    const scrollPos = window.scrollY;
+    document.querySelectorAll(".gradient-text").forEach((element, index) => {
+        // Adjust gradient movement based on scroll position
+        const gradientShift = ((scrollPos / window.innerHeight) * 100) + (index * 10); 
+        element.style.backgroundPosition = `${gradientShift}% center`;
+    });
+});
+
+// MEDIA PLAYER
+
+/* document.querySelectorAll(".custom-play").forEach((button) => {
+    button.addEventListener("click", () => {
+      const placeholder = button.previousElementSibling; // Get the placeholder div
+      const mediaContainer = placeholder.querySelector(".media-container"); // Get the iframe container
+      const videoId = mediaContainer.getAttribute('data-src'); // Get the video ID
+  
+      // Set the iframe's src dynamically to autoplay the video
+      mediaContainer.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&controls=1&rel=0&modestbranding=1`;
+  
+      // Show the iframe player
+      mediaContainer.style.display = 'block';
+  
+      // Fade out the play button
+      button.classList.add("hidden");
+  
+      // Remove the thumbnail background
+      placeholder.style.background = "none";
+  
+      // Listen for the video to end (check for `ended` event)
+      mediaContainer.onload = function () {
+        mediaContainer.contentWindow.addEventListener('unload', function() {
+          resetPlayer(placeholder, button, mediaContainer, videoId);
+        });
+      };
+    });
+  });
+  
+  // Reset the player when the video ends
+  function resetPlayer(placeholder, button, mediaContainer, videoId) {
+    // Hide the iframe after the video ends
+    mediaContainer.style.display = 'none';
+  
+    // Show the placeholder (thumbnail) and play button again
+    placeholder.style.backgroundImage = `url('https://img.youtube.com/vi/${videoId}/maxresdefault.jpg')`;
+    button.classList.remove("hidden"); // Show the play button again
+  } */

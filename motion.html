@@ -36,9 +36,33 @@
             </a>
     </header>
     <main class="content article-container">
-        <div class="article-cover">
-            <h1>Motion</h1>
-            <p>Sep 2022</p>
+        <div class="article-header">
+            <div class="article-cover">
+                <h1>Motion</h1>
+                <p>Sep 2022</p>
+            </div>
+            <div class="summary-container">
+                <div class="summary-divider">
+                    <div class="divider-block">
+                        <h4>My role</h4>
+                        <ul>
+                            <li>Lead designer</li>
+                        </ul>
+                    </div>
+                    <div class="divider-block">
+                        <h4>Platforms</h4>
+                        <ul>
+                            <li>iOS, Android, Web</li>
+                        </ul>
+                    </div>
+                    <div class="divider-block">
+                        <h4>Year</h4>
+                        <ul>
+                            <li>2021 -> 2023</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="article-content">
             <div class="article-section">
@@ -51,28 +75,6 @@
                             faces. In what follows, I relate the creation of the new Motion product and how we improved
                             the face-capture experience through user empathy, cross-functional collaboration, and an
                             iterative process.</p>
-                        <div class="segment-divider">
-                            <div class="divider-block">
-                                <h4>My role</h4>
-                                <ul>
-                                    <li>Lead designer</li>
-                                </ul>
-                            </div>
-                            <div class="divider-block">
-                                <h4>Platforms</h4>
-                                <ul>
-                                    <li>iOS</li>
-                                    <li>Android</li>
-                                    <li>Web</li>
-                                </ul>
-                            </div>
-                            <div class="divider-block">
-                                <h4>Year</h4>
-                                <ul>
-                                    <li>2021-2023</li>
-                                </ul>
-                            </div>
-                        </div>
                     </div>
                     <div class="section-segment">
                         <h3>My team</h3>
@@ -94,7 +96,7 @@
                             iterative process.</p>
                         <div class="segment-divider">
                             <div class="divider-block">
-                                <h4>Problem 1</h4>
+                                <h4>1. User problem</h4>
                                 <ul>
                                     <li>Our current Selfie Video product was designed to block more advanced fraud than
                                         our Selfie Photo product by adding movement and voice challenges. Specifically,
@@ -105,7 +107,7 @@
                                 </ul>
                             </div>
                             <div class="divider-block">
-                                <h4>Problem 2</h4>
+                                <h4>2. Business problem</h4>
                                 <ul>
                                     <li>The Selfie Video product is good at catching more advanced fraud but was not
                                         designed for automation. Its manual reviews take longer processing time and have
@@ -126,7 +128,10 @@
                 </div>
             </div>
             <div class="article-highlight">
-                <p>How might we make our facial scan product <span>easy to use, fraud-proof and automated?</span></p>
+                <p>
+                    <span class="solid-text">How might we make our facial scan product</span>
+                    <span class="gradient-text">easy to use, fraud-proof and automated?</span>
+                </p>
             </div>
             <div class="article-section">
                 <h2>Design process</h2>
@@ -150,9 +155,10 @@
                             interviews with users.</p>
                     </div>
                     <div class="section-media">
-                        <iframe class="media-container" src="assets/motion/Discovery.mp4" frameborder="0"
-                            allowfullscreen>
-                        </iframe>
+                        <video class="media-container" controls>
+                            <source src="assets/motion/Discovery.mp4" type="video/mp4">
+                        </video>
+                        <!--<button class="custom-play"><img src="assets/icons/play.svg" alt=""><span class="custom-play-label">Play video</span></button>-->
                         <p class="media-caption">Example of a few design prototypes</p>
                     </div>
                     <div class="section-segment">
@@ -184,10 +190,9 @@
                             movements with their devices filming their faces (see below).</p>
                     </div>
                     <div class="section-media">
-                        <iframe class="media-container"
-                            src="https://www.youtube.com/embed/UM9xoVljg88?si=s1LkFvpBbZcryT-S" frameborder="0"
-                            allowfullscreen>
-                        </iframe>
+                        <video class="media-container" controls>
+                            <source src="assets/motion/Movement-design.mp4" type="video/mp4">
+                        </video>
                         <p class="media-caption">The 4 design prototypes</p>
                     </div>
                     <div class="section-segment">
@@ -197,10 +202,9 @@
                             prototypes that we tested with users (see below).</p>
                     </div>
                     <div class="section-media">
-                        <iframe class="media-container"
-                            src="https://www.youtube.com/embed/lYIIoQ-TWWE?si=dsWP9BvUZsyJTfmE" frameborder="0"
-                            allowfullscreen>
-                        </iframe>
+                        <video class="media-container" controls>
+                            <source src="assets/motion/Movement-native.mp4" type="video/mp4">
+                        </video>
                         <p class="media-caption">Example of a few native prototypes</p>
                     </div>
                     <div class="section-segment">
@@ -218,10 +222,9 @@
                             attention.</p>
                     </div>
                     <div class="section-media">
-                        <iframe class="media-container"
-                            src="https://www.youtube.com/embed/v6IqK_CBi14?si=GrdbvJQHWI27-gyf" frameborder="0"
-                            allowfullscreen>
-                        </iframe>
+                        <video class="media-container" controls>
+                            <source src="assets/motion/Completion-pattern-head-haptics.mp4" type="video/mp4">
+                        </video>
                         <p class="media-caption">Completion pattern with vibrations (audio ON)</p>
                     </div>
                     <div class="section-segment">
@@ -231,10 +234,9 @@
                             to create and test native prototypes on iOS, Android, and Web (see below).</p>
                     </div>
                     <div class="section-media">
-                        <iframe class="media-container"
-                            src="https://www.youtube.com/embed/-9A0Otet5L4?si=XE8C9qjcx1U6k7Nt" frameborder="0"
-                            allowfullscreen>
-                        </iframe>
+                        <video class="media-container" controls>
+                            <source src="assets/motion/Platforms.mp4" type="video/mp4">
+                        </video>
                         <p class="media-caption">The head-turn experience on all platforms</p>
                     </div>
                     <div class="section-segment">
@@ -259,17 +261,16 @@
                             new Motion product.</p>
                     </div>
                     <div class="section-media">
-                        <iframe class="media-container"
-                            src="https://www.youtube.com/embed/vYRY9xyoQos?si=EdLNb2zZizcPRFhk" frameborder="0"
-                            allowfullscreen>
-                        </iframe>
+                        <video class="media-container" controls>
+                            <source src="assets/motion/Final.mp4" type="video/mp4">
+                        </video>
                         <p class="media-caption">The entire Alpha Motion flow</p>
                     </div>
                 </div>
             </div>
             <div class="article-quote">
                 <img src="assets/icons/quote.svg" alt="">
-                <h3><span class="quote-highlight">Motion enables [our customers] to set up an account in seconds</span>
+                <h3><span class="quote-highlight">Motion enables our customers to set up an account in seconds</span>
                     and be on their way on one of our mopeds, while enabling us to <span class="quote-highlight">keep
                         operating costs low and run efficiently</span> as an agile and high-growth business.</h3>
                 <div class="author-wrapper">
@@ -397,15 +398,15 @@
             </div>
             <div class="article-metrics">
                 <div class="metric-item">
-                    <h2 class="metric-number">461</h2>
+                    <h2 class="metric-number gradient-text">461</h2>
                     <p class="metric-caption">Customers</p>
                 </div>
                 <div class="metric-item">
-                    <h2 class="metric-number">5M</h2>
+                    <h2 class="metric-number gradient-text">5M</h2>
                     <p class="metric-caption">Monthly scans</p>
                 </div>
                 <div class="metric-item">
-                    <h2 class="metric-number">97%</h2>
+                    <h2 class="metric-number gradient-text">97%</h2>
                     <p class="metric-caption">Success rate</p>
                 </div>
             </div>
@@ -440,10 +441,9 @@
                             Motion ads during the Money20/20 event.</p>
                     </div>
                     <div class="section-media">
-                        <iframe class="media-container"
-                            src="https://www.youtube.com/embed/mflss8iVAaI?si=U_bI1sJFsB76Fw2C" frameborder="0"
-                            allowfullscreen>
-                        </iframe>
+                        <video class="media-container" controls>
+                            <source src="assets/motion/Billboard.mp4" type="video/mp4">
+                        </video>
                         <p class="media-caption">The appearance that made me famous</p>
                     </div>
                 </div>
