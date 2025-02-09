@@ -20,19 +20,22 @@
     <header>
         <div id="header-container">
             <a href="index.html" class="button-link button-back">
-                <button class="button-secondary" tabindex="-1"><svg width="16" height="16" viewBox="0 0 16 16"
+                <button class="button-secondary" tabindex="-1">
+                    <svg width="16" height="16" viewBox="0 0 16 16"
                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
                             d="M4.41422 8.99999L7.70711 12.2929C8.09764 12.6834 8.09764 13.3166 7.70711 13.7071C7.31659 14.0976 6.68343 14.0976 6.2929 13.7071L1.2929 8.70711C0.902376 8.31658 0.902375 7.68342 1.2929 7.29289L6.2929 2.29289C6.68342 1.90237 7.31659 1.90237 7.70711 2.29289C8.09764 2.68342 8.09764 3.31658 7.70711 3.70711L4.41423 6.99999L14 7.00001C14.5523 7.00001 15 7.44773 15 8.00001C15 8.5523 14.5523 9.00001 14 9.00001L4.41422 8.99999Z"
                             fill="currentColor" />
-                    </svg>Back</button>
+                    </svg>
+                    <span class="back-button-text">Back</span>
+                </button>
             </a>
             <a href="index.html" class="button-link" id="logo">
                 <img src="assets/icons/logo.png" alt="">
             </a>
             <a href="assets/resume/theo-richard-resume-2025.pdf" download="theo-richard-resume-2025.pdf" target="_blank"
                 id="download-resume">
-                <button class="button" tabindex="-1">Resume<img src="assets/icons/arrow-down-light.svg" alt=""></button>
+                <button class="button" tabindex="-1"><img src="assets/icons/arrow-down-light.svg" alt=""></button>
             </a>
     </header>
     <main class="content article-container">
@@ -159,7 +162,10 @@
                             <source src="assets/motion/Discovery.mp4" type="video/mp4">
                         </video>
                         <!--<button class="custom-play"><img src="assets/icons/play.svg" alt=""><span class="custom-play-label">Play video</span></button>-->
-                        <p class="media-caption">Example of a few design prototypes</p>
+                        <div class="media-caption">
+                            <img id="caption-icon" src="assets/icons/arrow-caption.svg" alt="">
+                            <p>Example of a few design prototypes</p>
+                        </div>
                     </div>
                     <div class="section-segment">
                         <p>From these interviews we learned the following:</p>
@@ -193,7 +199,10 @@
                         <video class="media-container" controls>
                             <source src="assets/motion/Movement-design.mp4" type="video/mp4">
                         </video>
-                        <p class="media-caption">The 4 design prototypes</p>
+                        <div class="media-caption">
+                            <img id="caption-icon" src="assets/icons/arrow-caption.svg" alt="">
+                            <p>The 4 design prototypes</p>
+                        </div>
                     </div>
                     <div class="section-segment">
                         <p>We were able to identify the kind of movements with which people felt the most comfortable.
@@ -205,7 +214,10 @@
                         <video class="media-container" controls>
                             <source src="assets/motion/Movement-native.mp4" type="video/mp4">
                         </video>
-                        <p class="media-caption">Example of a few native prototypes</p>
+                        <div class="media-caption">
+                            <img id="caption-icon" src="assets/icons/arrow-caption.svg" alt="">
+                            <p>Example of a few native prototypes</p>
+                        </div>
                     </div>
                     <div class="section-segment">
                         <p>According to our tests, head motions felt more natural. Users intuitively understood the
@@ -225,7 +237,10 @@
                         <video class="media-container" controls>
                             <source src="assets/motion/Completion-pattern-head-haptics.mp4" type="video/mp4">
                         </video>
-                        <p class="media-caption">Completion pattern with vibrations (audio ON)</p>
+                        <div class="media-caption">
+                            <img id="caption-icon" src="assets/icons/arrow-caption.svg" alt="">
+                            <p>Completion pattern with vibrations (audio ON)</p>
+                        </div>
                     </div>
                     <div class="section-segment">
                         <h3>Validation on all platforms</h3>
@@ -237,7 +252,10 @@
                         <video class="media-container" controls>
                             <source src="assets/motion/Platforms.mp4" type="video/mp4">
                         </video>
-                        <p class="media-caption">The head-turn experience on all platforms</p>
+                        <div class="media-caption">
+                            <img id="caption-icon" src="assets/icons/arrow-caption.svg" alt="">
+                            <p>The head-turn experience on all platforms</p>
+                        </div>
                     </div>
                     <div class="section-segment">
                         <p>Even though users from the different platforms tend to have their own mental models (for
@@ -264,7 +282,10 @@
                         <video class="media-container" controls>
                             <source src="assets/motion/Final.mp4" type="video/mp4">
                         </video>
-                        <p class="media-caption">The entire Alpha Motion flow</p>
+                        <div class="media-caption">
+                            <img id="caption-icon" src="assets/icons/arrow-caption.svg" alt="">
+                            <p>The entire Alpha Motion flow</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -370,21 +391,30 @@
                                         <img
                                             src="">
                                     </div>
-                                    <p class="media-caption">Image 1.</p>
+                                    <div class="media-caption">
+                                        <img id="caption-icon" src="assets/icons/arrow-caption.svg" alt="">
+                                        <p>Image 1</p>
+                                    </div>
                                 </div>
                                 <div class="carousel-slide">
                                     <div class="img-container">
                                         <img
                                             src="">
                                     </div>
-                                    <p class="media-caption">Image 2.</p>
+                                    <div class="media-caption">
+                                        <img id="caption-icon" src="assets/icons/arrow-caption.svg" alt="">
+                                        <p>Image 2</p>
+                                    </div>
                                 </div>
                                 <div class="carousel-slide">
                                     <div class="img-container">
                                         <img
                                             src="">
                                     </div>
-                                    <p class="media-caption">Image 3.</p>
+                                    <div class="media-caption">
+                                        <img id="caption-icon" src="assets/icons/arrow-caption.svg" alt="">
+                                        <p>Image 3</p>
+                                    </div>
                                 </div>
                             </div>
                             <div class="carousel-controls">
@@ -444,7 +474,10 @@
                         <video class="media-container" controls>
                             <source src="assets/motion/Billboard.mp4" type="video/mp4">
                         </video>
-                        <p class="media-caption">The appearance that made me famous</p>
+                        <div class="media-caption">
+                            <img id="caption-icon" src="assets/icons/arrow-caption.svg" alt="">
+                            <p>The appearance that made me famous</p>
+                        </div>
                     </div>
                 </div>
 
@@ -492,13 +525,13 @@
                 <button class="button-project previous">
                     <img src="assets/icons/arrow-left-big.svg" alt="">
                     <div class="button-wrapper">
-                        <p class="button-title">Previous project</p>
+                        <p class="button-title"></p>
                         <p class="button-content">ID Verification</p>
                     </div>
                 </button>
                 <button class="button-project next">
                     <div class="button-wrapper">
-                        <p class="button-title">Next project</p>
+                        <p class="button-title"></p>
                         <p class="button-content">NFC Scan</p>
                     </div>
                     <img src="assets/icons/arrow-right-big.svg" alt="">
@@ -507,10 +540,12 @@
     </main>
     <footer>
         <div id="footer-container">
-            <h1>Let's connect</h1>
-            <div id="connect-description">
-                <p>Feel free to reach out for collaborations</p>
-                <a href="mailto:theoricharddesign@gmail.com">theoricharddesign@gmail.com</a>
+            <div class="connect-container">
+                <h1>Let's connect</h1>
+                <div id="connect-description">
+                    <p>Feel free to reach out for collaborations</p>
+                    <a href="mailto:theoricharddesign@gmail.com">theoricharddesign@gmail.com</a>
+                </div>
             </div>
             <div id="social">
                 <ul>
