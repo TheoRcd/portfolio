@@ -1287,6 +1287,7 @@ input.error {
 .article-highlight .gradient-text {
   background: linear-gradient(90deg, #8D76FF, #FF76C7, #8D76FF);
   background-size: 300% 100%;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline;
@@ -1554,6 +1555,7 @@ input.error {
 .metric-item .gradient-text {
   background: linear-gradient(90deg, #8D76FF, #FF76C7, #8D76FF);
   background-size: 800% 100%;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline;
