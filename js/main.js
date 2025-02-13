@@ -21,11 +21,29 @@ document.addEventListener("DOMContentLoaded", () => {
 // SCROLL TO TOP
 document.querySelector('#anchor-up').addEventListener('click', function (e) {
     e.preventDefault(); // Prevent default anchor behavior
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth' // Enables smooth scrolling
-    });
+    smoothScrollToTop(800); // Adjust time in ms
 });
+
+function smoothScrollToTop(duration) {
+    const start = window.scrollY;
+    const startTime = performance.now();
+
+    function scrollStep(currentTime) {
+        const elapsedTime = currentTime - startTime;
+        const progress = Math.min(elapsedTime / duration, 1); // Ensure progress doesn't exceed 1
+        const easeInOutCubic = progress < 0.5 
+            ? 4 * progress * progress * progress 
+            : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+
+        window.scrollTo(0, start * (1 - easeInOutCubic));
+
+        if (elapsedTime < duration) {
+            requestAnimationFrame(scrollStep);
+        }
+    }
+
+    requestAnimationFrame(scrollStep);
+}
 
 // NAV
 document.addEventListener("DOMContentLoaded", function () {
@@ -98,6 +116,9 @@ navItems.forEach((item) => {
     item.addEventListener('click', () => {
         const target = item.getAttribute('data-target'); // Get the target section
 
+        // Update URL without reloading the page
+        history.pushState(null, "", `#${target}`);
+
         if (target === previousActive) return; // Do nothing if clicking the active section
 
         sections.forEach((section) => {
@@ -148,6 +169,14 @@ navItems.forEach((item) => {
 
         previousActive = target; // Update previous active section
     });
+});
+
+// On page load, check if there's a hash in the URL and activate the correct item
+window.addEventListener("load", () => {
+    const hash = window.location.hash.substring(1); // Remove the #
+    if (hash) {
+        document.querySelector(`nav li[data-target="${hash}"]`)?.click();
+    }
 });
 
 // PASSWORD
@@ -281,6 +310,69 @@ document.addEventListener("scroll", () => {
         const gradientShift = ((scrollPos / window.innerHeight) * 100) + (index * 10); 
         element.style.backgroundPosition = `${gradientShift}% center`;
     });
+});
+
+// COVER BLUR SCROLL
+const coverBlur = document.querySelector(".cover-blur");
+const coverTitle = document.querySelector(".cover-title");
+const coverDescription = document.querySelector(".cover-description");
+
+let maxScroll, blurValueMax, titleBlurValueMax, descriptionBlurValueMax;
+
+// Function to update max values based on screen size
+function updateMaxValues() {
+  if (window.innerWidth <= 768) {
+    maxScroll = 84;
+    blurValueMax = 32;
+    titleBlurValueMax = 32;
+    descriptionBlurValueMax = 20;
+  } else {
+    maxScroll = 164;
+    blurValueMax = 64;
+    titleBlurValueMax = 64;
+    descriptionBlurValueMax = 40;
+  }
+}
+
+function updateEffects() {
+  let scrollTop = window.scrollY;
+
+  // Clamp scroll between 0 and maxScroll
+  let clampedScroll = Math.min(Math.max(scrollTop, 0), maxScroll);
+
+  // Background blur effect (32px or 64px to 0px)
+  let blurValue = blurValueMax * (1 - clampedScroll / maxScroll);
+
+  // Title blur effect (0px to 32px or 64px)
+  let titleBlurValue = titleBlurValueMax * (clampedScroll / maxScroll);
+
+  // Description blur effect (0px to 20px or 40px)
+  let descriptionBlurValue = descriptionBlurValueMax * (clampedScroll / maxScroll);
+
+  // Opacity effect (1 to 0)
+  let opacityValue = 1 - clampedScroll / maxScroll;
+
+  // Apply background blur
+  coverBlur.style.backdropFilter = `blur(${blurValue}px)`;
+  coverBlur.style.webkitBackdropFilter = `blur(${blurValue}px)`;
+
+  // Apply text blur & opacity to title and description
+  coverTitle.style.opacity = opacityValue;
+  coverTitle.style.filter = `blur(${titleBlurValue}px)`;
+
+  coverDescription.style.opacity = opacityValue;
+  coverDescription.style.filter = `blur(${descriptionBlurValue}px)`;
+}
+
+// Initial setup
+updateMaxValues();
+updateEffects();
+
+// Event listeners
+window.addEventListener("scroll", updateEffects);
+window.addEventListener("resize", () => {
+  updateMaxValues();
+  updateEffects(); // Reapply effects after resizing
 });
 
 // MEDIA PLAYER

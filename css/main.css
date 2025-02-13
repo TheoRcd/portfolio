@@ -13,22 +13,22 @@
 
 *::-moz-selection {
   background: #262626;
-  color: #ffffff;
+  color: #FFFFFF;
 }
 
 *::selection {
   background: #262626;
-  color: #ffffff;
+  color: #FFFFFF;
 }
 
 *::-moz-selection {
   background: #262626;
-  color: #ffffff;
+  color: #FFFFFF;
 }
 
 *::-webkit-selection {
   background: #262626;
-  color: #ffffff;
+  color: #FFFFFF;
 }
 
 :focus-visible {
@@ -79,8 +79,8 @@ footer {
   width: 12px;
   height: 12px;
   background-color: #262626;
+  backdrop-filter: blur(0);
   -webkit-backdrop-filter: blur(0);
-          backdrop-filter: blur(0);
   border-radius: 50%;
   pointer-events: none;
   transform: translate(-50%, -50%) scale(1);
@@ -90,8 +90,8 @@ footer {
 
 .active-cursor {
   background-color: rgba(38, 38, 38, 0.4);
+  backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
-          backdrop-filter: blur(2px);
   transform: translate(-50%, -50%) scale(1.6);
 }
 
@@ -313,7 +313,6 @@ main {
   justify-content: center;
   width: 100%;
   overflow: hidden;
-  /*background-color: red;*/
 }
 
 .section {
@@ -353,6 +352,8 @@ main {
 .card-img img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .card-description {
@@ -655,7 +656,6 @@ footer li a {
   bottom: 80px;
   width: 44px;
   height: 44px;
-  color: white;
   border: none;
   border-radius: 24px;
 }
@@ -693,8 +693,8 @@ footer li a {
   width: 100%;
   height: 100%;
   background-color: rgba(38, 38, 38, 0.85);
+  backdrop-filter: blur(0px);
   -webkit-backdrop-filter: blur(0px);
-          backdrop-filter: blur(0px);
   z-index: 3;
   opacity: 0;
   pointer-events: none;
@@ -704,8 +704,8 @@ footer li a {
 #password-overlay.show {
   display: flex;
   visibility: visible;
+  backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-          backdrop-filter: blur(8px);
   opacity: 1;
   pointer-events: auto;
   transition: all 0.2s ease-in-out;
@@ -855,7 +855,7 @@ input.error {
   opacity: 0;
   pointer-events: none;
   transform: translate(-48px, 0px);
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s cubic-bezier(0.64, 0, 0.32, 1);
 }
 
 .content.inactive-right {
@@ -863,7 +863,7 @@ input.error {
   opacity: 0;
   pointer-events: none;
   transform: translate(48px, 0px);
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s cubic-bezier(0.64, 0, 0.32, 1);
 }
 
 .content.entering-left {
@@ -871,7 +871,7 @@ input.error {
   opacity: 0;
   pointer-events: none;
   transform: translate(-48px, 0px);
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s cubic-bezier(0.64, 0, 0.32, 1);
 }
 
 .content.entering-right {
@@ -879,7 +879,7 @@ input.error {
   opacity: 0;
   pointer-events: none;
   transform: translate(48px, 0px);
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s cubic-bezier(0.64, 0, 0.32, 1);
 }
 
 .content.active {
@@ -887,7 +887,7 @@ input.error {
   opacity: 1;
   pointer-events: auto;
   transform: translate(0px, 0px);
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s cubic-bezier(0.64, 0, 0.32, 1);
 }
 
 .content-background-blur {
@@ -901,22 +901,22 @@ input.error {
 
 .content.inactive-left .content-background-blur,
 .content.inactive-right .content-background-blur {
+  backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-          backdrop-filter: blur(8px);
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s cubic-bezier(0.64, 0, 0.32, 1);
 }
 
 .content.entering-left .content-background-blur,
 .content.entering-right .content-background-blur {
+  backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-          backdrop-filter: blur(8px);
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s cubic-bezier(0.64, 0, 0.32, 1);
 }
 
 .content.active .content-background-blur {
+  backdrop-filter: blur(0px);
   -webkit-backdrop-filter: blur(0px);
-          backdrop-filter: blur(0px);
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s cubic-bezier(0.64, 0, 0.32, 1);
 }
 
 /* NEW ARTICLE */
@@ -974,15 +974,21 @@ input.error {
   background-color: #E9E6E1;
 }
 
-.article-cover h1 {
+.cover-title {
+  position: relative;
+  color: #F7F5F2;
   font-size: 100px;
   line-height: 120px;
   font-weight: 600;
   margin: 0;
   padding-top: 46px;
+  filter: blur(0);
+  transition: all 0.1s linear;
 }
 
-.article-cover p {
+.cover-description {
+  position: relative;
+  color: #F7F5F2;
   font-size: 14px;
   line-height: 30px;
   text-transform: uppercase;
@@ -990,6 +996,27 @@ input.error {
   font-weight: bold;
   letter-spacing: 1.68px;
   margin: 0;
+  filter: blur(0);
+  transition: opacity 0.1s linear;
+}
+
+.cover-img {
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.cover-blur {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(64px);
+  -webkit-backdrop-filter: blur(64px);
+  transition: -webkit-backdrop-filter 0.1s linear;
+  transition: backdrop-filter 0.1s linear;
+  transition: backdrop-filter 0.1s linear, -webkit-backdrop-filter 0.1s linear;
 }
 
 .summary-container {
@@ -1010,7 +1037,7 @@ input.error {
 }
 
 .summary-divider .divider-block {
-  flex: 1;
+  flex: auto;
 }
 
 .summary-divider h4 {
@@ -1103,8 +1130,8 @@ input.error {
   height: 44px;
   padding: 10px 18px 10px 14px;
   border-radius: 24px;
+  backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
   overflow: hidden;
   white-space: nowrap;
   transition: all 0.2s ease-in-out;
@@ -1253,15 +1280,12 @@ input.error {
   margin: 0;
 }
 
-/*.article-highlight span {
-    color: #8D76FF;
-}*/
 .solid-text {
   color: #262626;
 }
 
 .article-highlight .gradient-text {
-  background: linear-gradient(90deg, #8D76FF, #ff76c7, #8D76FF);
+  background: linear-gradient(90deg, #8D76FF, #FF76C7, #8D76FF);
   background-size: 300% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1528,7 +1552,7 @@ input.error {
 }
 
 .metric-item .gradient-text {
-  background: linear-gradient(90deg, #8D76FF, #ff76c7, #8D76FF);
+  background: linear-gradient(90deg, #8D76FF, #FF76C7, #8D76FF);
   background-size: 800% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1537,7 +1561,6 @@ input.error {
 }
 
 .metric-item h2 {
-  /*color: #8D76FF;*/
   font-size: 60px;
   line-height: 78px;
   text-align: center;
@@ -1565,7 +1588,7 @@ input.error {
 .carousel {
   display: flex;
   gap: 32px;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.6s cubic-bezier(0.64, 0, 0.32, 1);
 }
 
 .carousel-slide {
@@ -1613,8 +1636,8 @@ input.error {
   width: 44px;
   height: 44px;
   border-radius: 50%;
+  backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
   transition: all 0.2s ease-in-out;
 }
 
@@ -1633,8 +1656,8 @@ input.error {
   display: flex;
   gap: 12px;
   background-color: rgba(30, 30, 36, 0.75);
+  backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
   height: 44px;
   align-items: center;
   padding: 0 20px;
@@ -1934,7 +1957,7 @@ input.error {
     border-radius: 16px;
   }
   .article-cover h1 {
-    padding-top: 32px;
+    padding-top: 12px;
   }
   .article-cover p {
     font-size: 12px;

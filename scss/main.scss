@@ -37,22 +37,22 @@ $container-max-width: (
 }
 
 *::selection {
-    background: #262626;
-    color: #ffffff;
+    background: $content-primary;
+    color: $color-white;
 }
 
 *::-moz-selection {
-    background: #262626;
-    color: #ffffff;
+    background: $content-primary;
+    color: $color-white;
 }
 
 *::-webkit-selection {
-    background: #262626;
-    color: #ffffff;
+    background: $content-primary;
+    color: $color-white;
 }
 
 :focus-visible {
-    outline: 2px solid #8D76FF;
+    outline: 2px solid $primary-accent-color;
     outline-offset: 2px;
     border-radius: 8px;
 }
@@ -69,7 +69,7 @@ body {
     justify-content: center;
     flex-direction: column;
     margin: 0;
-    background-color: #F7F5F2;
+    background-color: $primary-background-color;
     overflow-x: hidden;
     cursor: none;
 }
@@ -98,8 +98,9 @@ footer {
     position: fixed;
     width: 12px;
     height: 12px;
-    background-color: #262626;
+    background-color: $content-primary;
     backdrop-filter: blur(0);
+    -webkit-backdrop-filter: blur(0);
     border-radius: 50%;
     pointer-events: none;
     transform: translate(-50%, -50%) scale(1);
@@ -110,6 +111,7 @@ footer {
 .active-cursor {
     background-color: rgba(38, 38, 38, 0.4);
     backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
     transform: translate(-50%, -50%) scale(1.6);
 }
 
@@ -117,12 +119,12 @@ h1 {
     font-size: 40px;
     line-height: 52px;
     margin: 0;
-    color: #262626;
+    color: $content-primary;
     font-weight: 600;
 }
 
 p {
-    color: #262626;
+    color: $content-primary;
     font-weight: 400;
 }
 
@@ -137,8 +139,8 @@ button {
     justify-content: center;
     gap: 8px;
     padding: 10px 16px 10px 20px;
-    background-color: #BCA48F;
-    color: #FFFFFF;
+    background-color: $primary-brown;
+    color: $color-white;
     border: none;
     border-radius: 12px;
     /*cursor: pointer;*/
@@ -150,7 +152,7 @@ button {
 }
 
 .button:hover {
-    background-color: #8D76FF;
+    background-color: $primary-accent-color;
 }
 
 .button img {
@@ -164,8 +166,8 @@ button {
     justify-content: center;
     gap: 8px;
     padding: 10px 16px 10px 20px;
-    background-color: #E9E6E1;
-    color: #8D7458;
+    background-color: $secondary-brown;
+    color: $tertiary-brown;
     border: none;
     border-radius: 12px;
     /*cursor: pointer;*/
@@ -178,7 +180,7 @@ button {
 
 .button-secondary:hover {
     background-color: rgba(141, 118, 255, .16);
-    color: #8D76FF;
+    color: $primary-accent-color;
 }
 
 .button-secondary img {
@@ -235,17 +237,17 @@ header #header-intro {
 }
 
 #header-intro a {
-    color: #262626;
+    color: $content-primary;
     font-weight: 500;
     text-decoration: none;
-    border-bottom: 2px solid #DED7CF;
+    border-bottom: 2px solid $quaternary-brown;
     transition: all .2s ease-in-out;
 }
 
 #header-intro a:hover {
-    color: #8D76FF;
-    background-color: #EDE9FF;
-    border-bottom: 2px solid #8D76FF;
+    color: $primary-accent-color;
+    background-color: $primary-accent-color-sublte;
+    border-bottom: 2px solid $primary-accent-color;
 }
 
 #header-intro p {
@@ -280,7 +282,7 @@ nav {
     flex-direction: row;
     padding: 8px 8px;
     border-radius: 32px;
-    background: #E9E6E1;
+    background: $secondary-brown;
 }
 
 nav ul {
@@ -295,14 +297,14 @@ nav ul {
 }
 
 nav .active {
-    color: #FFFFFF;
+    color: $color-white;
 }
 
 nav li {
     position: relative;
     font-size: 16px;
     line-height: 24px;
-    color: #8D7458;
+    color: $tertiary-brown;
     font-weight: 500;
     text-decoration: none;
     padding: 10px 20px;
@@ -312,14 +314,14 @@ nav li {
 }
 
 nav li:not(.active):hover {
-    background: #DED7CF;
+    background: $quaternary-brown;
     border-radius: 24px;
 }
 
 #nav-background {
     position: absolute;
     height: 100%;
-    background-color: #BCA48F;
+    background-color: $primary-brown;
     border-radius: 24px;
     z-index: 1;
     transition: all 0.2s ease;
@@ -331,7 +333,6 @@ main {
     justify-content: center;
     width: 100%;
     overflow: hidden;
-    /*background-color: red;*/
 }
 
 .section {
@@ -348,7 +349,7 @@ main {
     display: flex;
     flex-direction: row;
     width: 100%;
-    background-color: #FFFFFF;
+    background-color: $color-white;
     border-radius: 30px;
     overflow: hidden;
     margin: 0;
@@ -363,7 +364,7 @@ main {
 .card-img {
     flex-basis: 100%;
     aspect-ratio: 1/1;
-    background-color: #E9E6E1;
+    background-color: $secondary-brown;
     border-radius: 18px;
     overflow: hidden;
 }
@@ -371,6 +372,7 @@ main {
 .card-img img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
 .card-description {
@@ -422,7 +424,7 @@ main {
 }
 
 .about-me .arch {
-    background-color: #E9E6E1;
+    background-color: $secondary-brown;
     height: 460px;
     width: 360px;
     border-radius: 180px 180px 30px 30px;
@@ -440,7 +442,7 @@ main {
 }
 
 .about-me .highlight {
-    color: #262626;
+    color: $content-primary;
     text-align: center;
     font-size: 40px;
     font-weight: 600;
@@ -467,7 +469,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #E9E6E1;
+    background-color: $secondary-brown;
     height: 112px;
     width: 112px;
     border-radius: 50%;
@@ -539,7 +541,7 @@ main {
 }
 
 .background .background-list-title {
-    color: #262626;
+    color: $content-primary;
     font-size: 18px;
     line-height: 31px;
     font-weight: 400;
@@ -548,7 +550,7 @@ main {
 }
 
 .background .background-list-description {
-    color: #A0968D;
+    color: $content-secondary;
     font-size: 16px;
     line-height: 27px;
     font-weight: 400;
@@ -565,7 +567,7 @@ footer {
     justify-content: center;
     position: relative;
     width: 100%;
-    background-color: #E9E6E1;
+    background-color: $secondary-brown;
 }
 
 footer #footer-container {
@@ -599,7 +601,7 @@ footer #footer-container {
 }
 
 #connect-description a:hover {
-    color: #8D76FF;
+    color: $primary-accent-color;
     transition: all .2s ease-in-out;
 }
 
@@ -624,7 +626,7 @@ footer li {
 }
 
 footer a {
-    color: #8D7458;
+    color: $tertiary-brown;
 }
 
 footer img {
@@ -645,8 +647,8 @@ footer li a {
     bottom: 80px;
     width: 44px;
     height: 44px;
-    background-color: #DED7CF;
-    color: #8D7458;
+    background-color: $quaternary-brown;
+    color: $tertiary-brown;
     border: none;
     border-radius: 24px;
     font-size: 16px;
@@ -657,7 +659,7 @@ footer li a {
 
 #anchor-up:hover {
     background-color: rgba(141, 118, 255, .16);
-    color: #8D76FF;
+    color: $primary-accent-color;
     transition: all 0.2s ease-in-out;
 }
 
@@ -673,7 +675,6 @@ footer li a {
     bottom: 80px;
     width: 44px;
     height: 44px;
-    color: white;
     border: none;
     border-radius: 24px;
 }
@@ -715,6 +716,7 @@ footer li a {
     height: 100%;
     background-color: rgba(38, 38, 38, 0.85);
     backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
     z-index: 3;
     opacity: 0;
     pointer-events: none;
@@ -725,6 +727,7 @@ footer li a {
     display: flex;
     visibility: visible;
     backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     opacity: 1;
     pointer-events: auto;
     transition: all 0.2s ease-in-out;
@@ -737,7 +740,7 @@ footer li a {
     gap: 64px;
     width: 480px;
     padding: 64px;
-    background-color: #FFFFFF;
+    background-color: $color-white;
     border-radius: 30px;
     transform: translate(0px, 24px);
     transition: all 0.2s ease-in-out;
@@ -786,7 +789,7 @@ footer li a {
 #modal-icon img {
     width: 24px;
     height: 24px;
-    color: #8D76FF;
+    color: $primary-accent-color;
 }
 
 #modal-password-container {
@@ -809,17 +812,17 @@ footer li a {
     width: 48px;
     font-family: "SF Mono", monospace;
     font-size: 18px;
-    color: #262626;
+    color: $content-primary;
     font-weight: bold;
     text-align: center;
-    border: 2px solid #E9E6E1;
+    border: 2px solid $secondary-brown;
     outline: none;
     cursor: none;
     transition: all 0.2s ease-in-out;
 }
 
 #modal-password input:focus {
-    border: 3px solid #8D76FF;
+    border: 3px solid $primary-accent-color;
     outline: none;
     transition: all 0.2s ease-in-out;
 }
@@ -832,7 +835,7 @@ footer li a {
 }
 
 #error-message p {
-    color: #FF7859;
+    color: $error-primary;
     font-weight: 500;
     font-size: 16px;
     line-height: 27px;
@@ -857,13 +860,13 @@ footer li a {
 }
 
 input.success {
-    border: 2px solid #8D76FF !important;
+    border: 2px solid $primary-accent-color !important;
     outline: none;
     transition: all 0.2s ease-in-out;
 }
 
 input.error {
-    border: 2px solid #FF7859 !important;
+    border: 2px solid $error-primary !important;
     outline: none;
     transition: all 0.2s ease-in-out;
 }
@@ -875,7 +878,7 @@ input.error {
     opacity: 0;
     pointer-events: none;
     transform: translate(-48px, 0px);
-    transition: all 0.2s ease-in-out;
+    transition: all 0.3s cubic-bezier(0.64, 0, 0.32, 1);
 }
 
 .content.inactive-right {
@@ -883,7 +886,7 @@ input.error {
     opacity: 0;
     pointer-events: none;
     transform: translate(48px, 0px);
-    transition: all 0.2s ease-in-out;
+    transition: all 0.3s cubic-bezier(0.64, 0, 0.32, 1);
 }
 
 .content.entering-left {
@@ -891,7 +894,7 @@ input.error {
     opacity: 0;
     pointer-events: none;
     transform: translate(-48px, 0px);
-    transition: all 0.2s ease-in-out;
+    transition: all 0.3s cubic-bezier(0.64, 0, 0.32, 1);
 }
 
 .content.entering-right {
@@ -899,7 +902,7 @@ input.error {
     opacity: 0;
     pointer-events: none;
     transform: translate(48px, 0px);
-    transition: all 0.2s ease-in-out;
+    transition: all 0.3s cubic-bezier(0.64, 0, 0.32, 1);
 }
 
 .content.active {
@@ -907,7 +910,7 @@ input.error {
     opacity: 1;
     pointer-events: auto;
     transform: translate(0px, 0px);
-    transition: all 0.2s ease-in-out;
+    transition: all 0.3s cubic-bezier(0.64, 0, 0.32, 1);
 }
 
 .content-background-blur {
@@ -922,18 +925,21 @@ input.error {
 .content.inactive-left .content-background-blur,
 .content.inactive-right .content-background-blur {
     backdrop-filter: blur(8px);
-    transition: all 0.2s ease-in-out;
+    -webkit-backdrop-filter: blur(8px);
+    transition: all 0.3s cubic-bezier(0.64, 0, 0.32, 1);
 }
 
 .content.entering-left .content-background-blur,
 .content.entering-right .content-background-blur {
     backdrop-filter: blur(8px);
-    transition: all 0.2s ease-in-out;
+    -webkit-backdrop-filter: blur(8px);
+    transition: all 0.3s cubic-bezier(0.64, 0, 0.32, 1);
 }
 
 .content.active .content-background-blur {
     backdrop-filter: blur(0px);
-    transition: all 0.2s ease-in-out;
+    -webkit-backdrop-filter: blur(0px);
+    transition: all 0.3s cubic-bezier(0.64, 0, 0.32, 1);
 }
 
 /* NEW ARTICLE */
@@ -989,18 +995,24 @@ input.error {
     aspect-ratio: 16 / 9;
     border-radius: 30px;
     overflow: hidden;
-    background-color: #E9E6E1;
+    background-color: $secondary-brown;
 }
 
-.article-cover h1 {
+.cover-title {
+    position: relative;
+    color: $primary-background-color;
     font-size: 100px;
     line-height: 120px;
     font-weight: 600;
     margin: 0;
     padding-top: 46px;
+    filter: blur(0);
+    transition: all 0.1s linear;
 }
 
-.article-cover p {
+.cover-description {
+    position: relative;
+    color: $primary-background-color;
     font-size: 14px;
     line-height: 30px;
     text-transform: uppercase;
@@ -1008,6 +1020,24 @@ input.error {
     font-weight: bold;
     letter-spacing: 1.68px;
     margin: 0;
+    filter: blur(0);
+    transition: opacity 0.1s linear;
+}
+
+.cover-img {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.cover-blur {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(64px);
+    -webkit-backdrop-filter: blur(64px);
+    transition: backdrop-filter 0.1s linear;
 }
 
 .summary-container {
@@ -1024,11 +1054,11 @@ input.error {
     flex-direction: row;
     gap: 48px;
     padding: 24px 0 0 0;
-    border-top: 1px solid #DED7CF;
+    border-top: 1px solid $quaternary-brown;
 }
 
 .summary-divider .divider-block {
-    flex: 1;
+    flex: auto;
 }
 
 .summary-divider h4 {
@@ -1040,7 +1070,7 @@ input.error {
 
 .summary-divider ul {
     margin: 0;
-    color: #262626;
+    color: $content-primary;
 }
 
 .summary-divider ul {
@@ -1123,6 +1153,7 @@ input.error {
     padding: 10px 18px 10px 14px;
     border-radius: 24px;
     backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     overflow: hidden;
     white-space: nowrap;
     transition: all 0.2s ease-in-out;
@@ -1133,7 +1164,7 @@ input.error {
     line-height: 24px;
     text-decoration: none;
     font-weight: 500;
-    color: #FFFFFF;
+    color: $color-white;
     opacity: 0;
     transform: translateX(-4px);
     transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
@@ -1181,7 +1212,7 @@ input.error {
     font-size: 16px;
     line-height: 27px;
     font-weight: 400;
-    color: #A0968D;
+    color: $content-secondary;
     margin: 0;
 }
 
@@ -1196,7 +1227,7 @@ input.error {
     font-weight: 700;
     text-align: center;
     margin: 0;
-    color: #262626;
+    color: $content-primary;
 }
 
 .article-content h3 {
@@ -1204,7 +1235,7 @@ input.error {
     line-height: 42px;
     font-weight: 600;
     margin: 0;
-    color: #262626;
+    color: $content-primary;
 }
 
 .article-content h4 {
@@ -1222,17 +1253,17 @@ input.error {
 }
 
 .article-content a {
-    color: #262626;
+    color: $content-primary;
     font-weight: 500;
     text-decoration: none;
-    border-bottom: 2px solid #DED7CF;
+    border-bottom: 2px solid $quaternary-brown;
     transition: 0.2s ease-in-out;
 }
 
 .section-content a:hover {
-    color: #8D76FF;
-    background-color: #EDE9FF;
-    border-bottom: 2px solid #8D76FF;
+    color: $primary-accent-color;
+    background-color: $primary-accent-color-sublte;
+    border-bottom: 2px solid $primary-accent-color;
 }
 
 .segment-divider {
@@ -1247,7 +1278,7 @@ input.error {
 
 .article-content ul {
     margin: 0;
-    color: #262626;
+    color: $content-primary;
 }
 
 .divider-block ul {
@@ -1271,16 +1302,12 @@ input.error {
     margin: 0;
 }
 
-/*.article-highlight span {
-    color: #8D76FF;
-}*/
-
 .solid-text {
-    color: #262626;
+    color: $content-primary;
 }
 
 .article-highlight .gradient-text {
-    background: linear-gradient(90deg, #8D76FF, #ff76c7, #8D76FF);
+    background: linear-gradient(90deg, $primary-accent-color, $secondary-accent-color, $primary-accent-color);
     background-size: 300% 100%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -1306,13 +1333,13 @@ input.error {
     gap: 32px;
     border-radius: 24px;
     padding: 24px 32px;
-    background-color: #BCA48F;
+    background-color: $primary-brown;
     border: none;
     transition: 0.2s ease-in-out;
 }
 
 .button-project:hover {
-    background-color: #8D76FF;
+    background-color: $primary-accent-color;
     transition: 0.2s ease-in-out;
 }
 
@@ -1346,7 +1373,7 @@ input.error {
     font-family: "SF Mono", monospace;
     letter-spacing: 1.68px;
     text-transform: uppercase;
-    color: #FFFFFF;
+    color: $color-white;
 }
 
 .previous .button-title::before {
@@ -1361,7 +1388,7 @@ input.error {
     font-size: 24px;
     line-height: 30px;
     font-weight: 700;
-    color: #FFFFFF;
+    color: $color-white;
 }
 
 .previous .button-wrapper {
@@ -1393,7 +1420,7 @@ input.error {
     gap: 48px;
     padding: 64px 64px;
     border-radius: 24px;
-    background-color: #FFFFFF;
+    background-color: $color-white;
     position: relative;
     width: 100%;
     max-width: 960px;
@@ -1420,7 +1447,7 @@ input.error {
 .link-item .title {
     font-size: 18px;
     line-height: 31px;
-    color: #262626;
+    color: $content-primary;
     font-weight: 500;
     text-decoration: none;
     border-bottom: 2px solid rgb(222, 215, 207);
@@ -1429,15 +1456,15 @@ input.error {
 }
 
 .link-item .title:hover {
-    color: #8D76FF;
-    background-color: #EDE9FF;
-    border-bottom: 2px solid #8D76FF;
+    color: $primary-accent-color;
+    background-color: $primary-accent-color-sublte;
+    border-bottom: 2px solid $primary-accent-color;
 }
 
 .link-item .content {
     font-size: 18px;
     line-height: 31px;
-    color: #A0968D;
+    color: $content-secondary;
     font-weight: 400;
     margin: 0;
 }
@@ -1453,7 +1480,7 @@ input.error {
     gap: 48px;
     padding: 64px 64px;
     border-radius: 24px;
-    background-color: #FFFFFF;
+    background-color: $color-white;
     position: relative;
     width: 100%;
     max-width: 960px;
@@ -1469,7 +1496,7 @@ input.error {
     line-height: 52px;
     font-weight: 600;
     margin: 0;
-    color: #A0968D;
+    color: $content-secondary;
 }
 
 .article-quote i {
@@ -1477,7 +1504,7 @@ input.error {
 }
 
 .article-quote .quote-highlight {
-    color: #262626;
+    color: $content-primary;
 }
 
 .author-wrapper {
@@ -1488,7 +1515,7 @@ input.error {
 .author-wrapper .name {
     font-size: 18px;
     line-height: 31px;
-    color: #262626;
+    color: $content-primary;
     font-weight: 600;
     margin: 0;
 }
@@ -1496,7 +1523,7 @@ input.error {
 .author-wrapper .company {
     font-size: 18px;
     line-height: 31px;
-    color: #A0968D;
+    color: $content-secondary;
     font-weight: 400;
     margin: 0;
 }
@@ -1513,7 +1540,7 @@ input.error {
     align-items: start;
     gap: 48px;
     padding: 24px 0;
-    border-top: 1px solid #DED7CF;
+    border-top: 1px solid $quaternary-brown;
 }
 
 .table-item h4 {
@@ -1524,7 +1551,7 @@ input.error {
 .table-item p {
     font-size: 18px;
     line-height: 31px;
-    color: #262626;
+    color: $content-primary;
     font-weight: 400;
     margin: 0;
     flex: 1;
@@ -1547,7 +1574,7 @@ input.error {
 }
 
 .metric-item .gradient-text {
-    background: linear-gradient(90deg, #8D76FF, #ff76c7, #8D76FF);
+    background: linear-gradient(90deg, $primary-accent-color, $secondary-accent-color, $primary-accent-color);
     background-size: 800% 100%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -1556,7 +1583,6 @@ input.error {
 }
 
 .metric-item h2 {
-    /*color: #8D76FF;*/
     font-size: 60px;
     line-height: 78px;
     text-align: center;
@@ -1567,7 +1593,7 @@ input.error {
 .metric-item p {
     font-size: 18px;
     line-height: 31px;
-    color: #262626;
+    color: $content-primary;
     font-weight: 500;
     margin: 0;
 }
@@ -1585,7 +1611,7 @@ input.error {
   .carousel {
     display: flex;
     gap: 32px;
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.6s cubic-bezier(0.64, 0, 0.32, 1);
   }
   
   .carousel-slide {
@@ -1600,7 +1626,7 @@ input.error {
     width: 100%;
     aspect-ratio: 16 / 9;
     border-radius: 24px;
-    background-color: #E9E6E1;
+    background-color: $secondary-brown;
     overflow: hidden;
   }
   
@@ -1627,12 +1653,13 @@ input.error {
     align-items: center;
     justify-content: center;
     background: rgba(30,30,36,0.75);
-    color: #FFFFFF;
+    color: $color-white;
     border: none;
     width: 44px;
     height: 44px;
     border-radius: 50%;
     backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     transition: all 0.2s ease-in-out;
   }
   
@@ -1652,6 +1679,7 @@ input.error {
     gap: 12px;
     background-color: rgba(30,30,36,0.75);
     backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     height: 44px;
     align-items: center;
     padding: 0 20px;
@@ -1661,14 +1689,14 @@ input.error {
   .indicator {
     width: 6px;
     height: 6px;
-    background: #FFFFFF;
+    background: $color-white;
     opacity: 0.40;
     border-radius: 50%;
     transition: all 0.2s ease-in-out;
   }
   
   .indicator.active {
-    background: #FFFFFF;
+    background: $color-white;
     opacity: 1;
     transition: all 0.2s ease-in-out;
   }
@@ -2006,7 +2034,7 @@ input.error {
     }
 
     .about-me .arch {
-        background-color: #E9E6E1;
+        background-color: $secondary-brown;
         height: 240px;
         width: 200px;
         border-radius: 100px 100px 16px 16px;
@@ -2024,7 +2052,7 @@ input.error {
     }
 
     .article-cover h1 {
-        padding-top: 32px;
+        padding-top: 12px;
     }
 
     .article-cover p {
